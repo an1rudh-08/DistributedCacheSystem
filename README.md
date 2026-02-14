@@ -9,44 +9,6 @@ Designed to demonstrate advanced Low-Level Design (LLD) principles, concurrency 
 
 ---
 
-## 🏗️ Architecture
-
-The system uses a client-side distribution model with Consistent Hashing to route requests to cache nodes.
-
-```mermaid
-graph TD
-    Client[Client Application]
-    subgraph "Distributed Cache Client"
-        Router[Consistent Hash Router]
-        Coalescer[Request Coalescer]
-    end
-    
-    subgraph "Cache Nodes"
-        NodeA[Node A (LFU + Write-Through)]
-        NodeB[Node B (LRU + Write-Back)]
-        NodeC[Node C (LRU + Read-Only)]
-    end
-    
-    DB[(Persistent Database)]
-
-    Client --> Router
-    Router --> NodeA
-    Router --> NodeB
-    Router --> NodeC
-    
-    NodeA <--> DB
-    NodeB <--> DB
-    NodeC <-- DB
-    
-    classDef client fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef component fill:#dfd,stroke:#333,stroke-width:2px;
-    classDef storage fill:#bbf,stroke:#333,stroke-width:2px;
-    
-    class Client client;
-    class Router,Coalescer,NodeA,NodeB,NodeC component;
-    class DB storage;
-```
-
 ## 🚀 Key Features
 
 ### 1. Distributed Consistency (Consistent Hashing)
