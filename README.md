@@ -1,9 +1,5 @@
 # ⚡ Robust Distributed Cache
 
-![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-production--ready-brightgreen.svg)
-
 A production-grade, thread-safe Distributed Cache system implemented in Python. 
 Designed to demonstrate advanced Low-Level Design (LLD) principles, concurrency patterns, and distributed system concepts.
 
